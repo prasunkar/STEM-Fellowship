@@ -1,0 +1,47 @@
+{
+  "name": "stemfellowship",
+  "version": "1.0.0",
+  "private": true,
+  "description": "STEM Fellowship",
+  "author": "Prasun Kar",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.21",
+    "@fontsource/inter": "^4.5.0",
+    "@react-icons/all-files": "^4.1.0",
+    "apollo-link-prismic": "^1.0.9",
+    "autoprefixer": "^10.3.0",
+    "gatsby": "^3.9.0",
+    "gatsby-plugin-google-gtag": "^3.9.0",
+    "gatsby-plugin-image": "^1.9.0",
+    "gatsby-plugin-prismic-previews": "^4.0.0-beta.22",
+    "gatsby-plugin-sass": "^4.9.0",
+    "gatsby-plugin-sharp": "^3.9.0",
+    "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-source-prismic": "^4.0.0-beta.22",
+    "gatsby-transformer-sharp": "^3.9.0",
+    "gsap": "^3.7.1",
+    "isomorphic-fetch": "^3.0.0",
+    "node-sass": "^6.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^2.2.4"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "2.3.2"
+  }
+}

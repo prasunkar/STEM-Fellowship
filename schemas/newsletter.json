@@ -1,0 +1,120 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Unique ID",
+        "placeholder" : "Unique ID"
+      }
+    },
+    "hero_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Hero Image"
+      }
+    },
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "Newsletter Title"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : { },
+        "choices" : {
+          "quote" : {
+            "type" : "Slice",
+            "fieldset" : "Quote",
+            "description" : "A short blurb from an author",
+            "icon" : "format_quote",
+            "non-repeat" : {
+              "author_headshot" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Author Headshot"
+                }
+              },
+              "quote_content" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Quote Content",
+                  "placeholder" : "Quote"
+                }
+              },
+              "quote_author" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Quote Author",
+                  "placeholder" : "Quote Author"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "image" : {
+            "type" : "Slice",
+            "fieldset" : "Image",
+            "description" : "Insert a photo with a caption",
+            "icon" : "image",
+            "non-repeat" : { },
+            "repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              },
+              "caption" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Caption",
+                  "placeholder" : "Image Caption"
+                }
+              }
+            }
+          },
+          "rich_text" : {
+            "type" : "Slice",
+            "fieldset" : "Rich Text",
+            "description" : "Add some rich text",
+            "icon" : "text_fields",
+            "non-repeat" : {
+              "content" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                  "allowTargetBlank" : true,
+                  "label" : "Content",
+                  "placeholder" : "Newsletter Content"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  },
+  "Author" : {
+    "author" : {
+      "type" : "Link",
+      "config" : {
+        "select" : "document",
+        "customtypes" : [ "team_member" ],
+        "label" : "Author",
+        "placeholder" : "Newsletter Author"
+      }
+    }
+  }
+}

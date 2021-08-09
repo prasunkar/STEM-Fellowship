@@ -1,0 +1,108 @@
+nav.navigation {
+  @apply w-full h-20;
+
+  div { // Content Boundary
+    @apply 
+      w-5/6 h-full
+      mx-auto
+      flex
+      flex-row
+      justify-between
+      items-center
+    ;
+
+    .logo { @apply h-auto w-8; }
+
+    div.links {
+      @apply hidden m-0 w-auto h-auto;
+
+      @screen md { @apply flex flex-row; }
+      * {
+        @apply 
+          mx-2 
+          py-1 
+          px-4 
+          rounded-full 
+          transition-colors
+          cursor-pointer
+          font-bold
+          text-sm
+          tracking-tighter
+
+          hover:bg-blue-200 
+          hover:text-blue-800
+        ;
+
+        &:first-of-type {
+          @apply m-0 mr-2;
+          @screen xl { @apply mr-3; }
+        }
+
+        &:last-of-type {
+          @apply m-0 ml-2;
+          @screen xl { @apply ml-3; }
+        }
+
+        @screen lg { @apply px-5 text-base font-extrabold; }
+        @screen xl { @apply text-xl font-bold; }
+      }
+      
+      .active { @apply bg-blue-800 text-white; }
+    }
+
+    .socials { 
+      @apply
+        hidden
+        m-0
+        w-auto;
+
+      @screen lg { @apply flex flex-row; }
+
+      a {
+        @apply
+          rounded-full
+          p-1
+          transition-colors
+
+          hover:bg-blue-200
+          hover:text-blue-800
+        ;
+
+        svg {
+          @apply 
+            w-8
+            h-8
+          ;
+
+          @screen xl { @apply w-11 h-11; }
+        }
+      }
+    }
+
+    .menu {
+      @apply 
+        uppercase
+        font-extrabold
+        text-base
+        tracking-tighter
+        cursor-pointer
+        m-0
+        w-auto
+        h-auto
+        inline
+      ;
+
+      svg {
+        @apply w-9 h-9;
+
+        path { @apply stroke-current stroke-2; }
+      }
+
+      @screen md { @apply hidden; }
+    }
+  }
+}
+
+nav.overlay {
+  @apply text-white;
+}
