@@ -16,6 +16,33 @@ module.exports = {
     twitterUsername: '@STEM_Fellowship',
     instaUsername: '@stemfellowbloor',
     emailAddress: 'jacqueline.chen@stemfellowship.org',
+    navUrls: [
+      {
+        name: 'Home',
+        class: 'home',
+        to: '/',
+      },
+      {
+        name: 'Our Team',
+        class: 'our-team',
+        to: '/ourteam',
+      },
+      {
+        name: 'Events',
+        class: 'events',
+        to: '/events',
+      },
+      {
+        name: 'Newsletters',
+        class: 'newsletters',
+        to: '/newsletters',
+      },
+      {
+        name: 'Contact Us',
+        class: 'contact-us',
+        to: '/contactus',
+      },
+    ],
   },
   plugins: [
     {

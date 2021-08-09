@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { useEffect } from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import { gsap } from 'gsap'
 
 import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram'
 import { FiTwitter } from '@react-icons/all-files/fi/FiTwitter'
@@ -7,34 +8,48 @@ import Logo from './Logo'
 import HamburgerMenu from './HamburgerMenu'
 
 export default function Navigation({ overlay, children }) {
+  const {
+    site: {
+      siteMetadata: { navUrls },
+    },
+  } = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          navUrls {
+            class
+            name
+            to
+          }
+        }
+      }
+    }
+  `)
+
+  useEffect(() => {}, [])
+
   return (
     <nav className={overlay ? 'navigation overlay' : 'navigation'}>
+      <div className="overlay" id="overlay">
+        {navUrls.map((link, index) => (
+          <Link key={index} className={`link ${link.class}`} to={link.to}>
+            {link.name}
+          </Link>
+        ))}
+      </div>
       <div>
         <Logo className="logo" />
         <div className="links">
-          <Link className="home" activeClassName="active" to="/">
-            Home
-          </Link>
-
-          <Link className="our-team" activeClassName="active" to="/ourteam">
-            Our Team
-          </Link>
-
-          <Link className="events" activeClassName="active" to="/events">
-            Events
-          </Link>
-
-          <Link
-            className="newsletters"
-            activeClassName="active"
-            to="/newsletters"
-          >
-            Newsletters
-          </Link>
-
-          <Link className="contact-us" activeClassName="active" to="/contactus">
-            Contact Us
-          </Link>
+          {navUrls.map((link, index) => (
+            <Link
+              key={index}
+              className={link.class}
+              activeClassName="active"
+              to={link.to}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
         <div className="socials">
           <a
