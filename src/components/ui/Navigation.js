@@ -30,13 +30,6 @@ export default function Navigation({ overlay, children }) {
 
   return (
     <nav className={overlay ? 'navigation overlay' : 'navigation'}>
-      <div className="overlay" id="overlay">
-        {navUrls.map((link, index) => (
-          <Link key={index} className={`link ${link.class}`} to={link.to}>
-            {link.name}
-          </Link>
-        ))}
-      </div>
       <div>
         <Logo className="logo" />
         <div className="links">
@@ -61,6 +54,18 @@ export default function Navigation({ overlay, children }) {
           </a>
         </div>
         <HamburgerMenu />
+      </div>
+      <div className="overlay" id="overlay">
+        {navUrls.map((link, index) => (
+          <Link
+            key={index}
+            className={`link ${link.class}`}
+            activeClassName="active"
+            to={link.to}
+          >
+            {link.name}
+          </Link>
+        ))}
       </div>
     </nav>
   )

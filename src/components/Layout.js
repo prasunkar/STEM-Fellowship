@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Navigation overlay={false} />
-      {children}
+      <div id="body">{children}</div>
     </div>
   )
 }

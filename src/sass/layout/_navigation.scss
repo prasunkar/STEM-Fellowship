@@ -1,11 +1,23 @@
 nav.navigation {
-  @apply w-full h-20 z-50;
+  @apply w-full h-20 z-50 absolute;
 
   div.overlay {
     @apply fixed hidden flex-col justify-center items-center w-full h-0 z-40 top-0 left-0 bg-white;
 
     * {
-      @apply w-5/6 font-extrabold text-6xl tracking-tighter my-4;
+      @apply w-5/6 font-extrabold text-5xl text-transparent tracking-tighter my-2;
+
+      text-stroke: .032em #888888;
+      -webkit-text-stroke: .032em #888888;
+
+      @screen sm { @apply text-7xl; }
+    }
+
+    .active {
+      @apply text-blue-800;
+
+      text-stroke: 0;
+      -webkit-text-stroke: 0;
     }
   }
 

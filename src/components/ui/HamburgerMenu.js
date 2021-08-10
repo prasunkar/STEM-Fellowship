@@ -4,14 +4,15 @@ import { gsap } from 'gsap'
 export default function HamburgerMenu({ white }) {
   useEffect(() => {
     const tl = gsap.timeline({ paused: true }),
-      duration = 1
+      duration = 1,
+      linksStart = 0.56
 
     tl.to(
       '#menu-top',
       {
         duration: duration,
         y: 6,
-        ease: 'power4.inOut',
+        ease: 'back.inOut',
         transformOrigin: '50% 50%',
         stroke: 'rgb(239, 68, 68)',
         height: '.2rem',
@@ -24,7 +25,7 @@ export default function HamburgerMenu({ white }) {
         {
           duration: duration,
           y: -6,
-          ease: 'power4.inOut',
+          ease: 'back.inOut',
           transformOrigin: '50% 50%',
           stroke: 'rgb(239, 68, 68)',
           height: '.2rem',
@@ -38,11 +39,16 @@ export default function HamburgerMenu({ white }) {
           duration: 0.64,
           display: 'flex',
           height: '100vh',
-          ease: 'power1.inOut',
+          ease: 'power3.inOut',
         },
         0
       )
-      .from('.link', { opacity: 0, y: '0.64em', stagger: 0.048 }, 0.64)
+      .from(
+        '.link',
+        { opacity: 0, y: '1em', stagger: 0.048, ease: 'circ.out' },
+        linksStart
+      )
+      .to('#body', { display: 'none' }, linksStart)
       .reverse()
 
     document.getElementById('navmenu').onclick = () => {
