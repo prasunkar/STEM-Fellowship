@@ -1,25 +1,28 @@
 import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
 
-export default function HamburgerMenu({ white }) {
+export default function HamburgerMenu() {
   useEffect(() => {
     const tl = gsap.timeline({ paused: true }),
       duration = 1,
       linksStart = 0.56
 
-    tl.to(
-      '#menu-top',
-      {
-        duration: duration,
-        y: 6,
-        ease: 'back.inOut',
-        transformOrigin: '50% 50%',
-        stroke: 'rgb(239, 68, 68)',
-        height: '.2rem',
-        rotation: 45,
-      },
-      0
-    )
+    tl.to('#logo-path', { duration: duration, fill: '#00264F' }, 0)
+      .to('#logo-circle', { duration: duration, fill: '#231F20' }, 0)
+      .to(
+        '#menu-top',
+        {
+          duration: duration,
+          y: 6,
+          ease: 'back.inOut',
+          transformOrigin: '50% 50%',
+          stroke: 'rgb(239, 68, 68)',
+          strokeWidth: 3,
+          height: '.2rem',
+          rotation: 45,
+        },
+        0
+      )
       .to(
         '#menu-bottom',
         {
@@ -28,6 +31,7 @@ export default function HamburgerMenu({ white }) {
           ease: 'back.inOut',
           transformOrigin: '50% 50%',
           stroke: 'rgb(239, 68, 68)',
+          strokeWidth: 3,
           height: '.2rem',
           rotation: -45,
         },
@@ -58,9 +62,19 @@ export default function HamburgerMenu({ white }) {
 
   return (
     <div className="menu" id="navmenu">
-      <svg viewBox="0 0 34 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path id="menu-top" d="M1 1H33" strokeLinecap="round" />
-        <path id="menu-bottom" d="M1 13H33" strokeLinecap="round" />
+      <svg viewBox="0 0 34 14" xmlns="http://www.w3.org/2000/svg">
+        <path
+          id="menu-top"
+          d="M1 1H33"
+          strokeLinecap="round"
+          // stroke={fill ? fill : 'black'}
+        />
+        <path
+          id="menu-bottom"
+          d="M1 13H33"
+          strokeLinecap="round"
+          // stroke={fill ? fill : 'black'}
+        />
       </svg>
     </div>
   )

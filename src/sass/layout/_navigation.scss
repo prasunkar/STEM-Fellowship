@@ -1,5 +1,5 @@
 nav.navigation {
-  @apply w-full h-20 z-50 absolute;
+  @apply w-full h-20 z-50;
 
   div.overlay {
     @apply fixed hidden flex-col justify-center items-center w-full h-0 z-40 top-0 left-0 bg-white;
@@ -123,6 +123,16 @@ nav.navigation {
       }
 
       @screen md { @apply hidden; }
+    }
+  }
+}
+
+nav.overlay {
+  @apply bg-gray-300;
+
+  div {
+    * {
+      @apply fill-current stroke-current text-white;
     }
   }
 }

@@ -126,7 +126,7 @@ const links = [
 // markup
 const NewslettersPage = () => {
   return (
-    <Layout>
+    <Layout overlay={true}>
       <main style={pageStyles}>
         <title>NEWSLETTERS</title>
         <h1 style={headingStyles}>
