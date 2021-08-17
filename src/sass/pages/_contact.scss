@@ -1,0 +1,83 @@
+.page-contact {
+  div#body {
+    h1 {
+      @apply font-extrabold tracking-tighter text-2xl text-center my-4;
+    }
+
+    p {
+      @apply w-5/6 text-xs mx-auto mb-8 text-center text-gray-600;
+    }
+
+    div.contact-methods {
+      @apply flex flex-col gap-y-4;
+
+      div {
+        @apply rounded-md pt-2 pb-3 px-3;
+
+        h2 {
+          @apply tracking-tighter text-base font-semibold mb-2;
+        }
+      }
+
+      div.socials {
+        background-color: #00264F;
+
+        h2 { @apply text-white }
+
+        div.links {
+          @apply flex flex-col p-0;
+
+          button { // Instagram
+            @apply rounded-md px-3 py-1;
+            background-color: #fcc0d4;
+
+            a {
+              @apply flex flex-row items-center justify-center;
+
+              svg { @apply w-7 h-7 mr-1; }
+
+              p { @apply text-white font-semibold text-sm tracking-tighter m-0 w-auto leading-none align-middle; }
+            }
+          }
+
+          .instagram {
+            a {
+              svg, p {
+                color: #E1306C;
+              }
+            }
+          }
+        }
+      }
+
+      div.get-in-touch {
+        background-color: #f9f9f9;
+
+        form {
+          input, textarea {
+            @apply bg-transparent outline-none w-full placeholder-gray-300 font-bold tracking-tighter;
+          }
+
+          input.name-field {
+            @apply text-2xl;
+          }
+
+          input.email-field {
+            @apply text-base font-semibold text-red-500 mb-4;
+          }
+
+          textarea.body-field {
+            @apply text-sm text-gray-700 font-semibold mb-5 resize-none;
+          }
+
+          button {
+            @apply py-1 px-6 ml-auto rounded-full font-bold text-blue-600 bg-blue-200 text-sm tracking-tighter transition-colors duration-150 float-right;
+            
+            &:hover, &:focus { @apply text-white bg-blue-600; }
+            &:disabled { @apply text-gray-400 bg-gray-200 cursor-not-allowed; }
+          }
+        }
+      }
+    }
+  }
+}

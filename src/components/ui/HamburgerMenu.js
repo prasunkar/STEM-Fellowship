@@ -5,7 +5,8 @@ export default function HamburgerMenu() {
   useEffect(() => {
     const tl = gsap.timeline({ paused: true }),
       duration = 1,
-      linksStart = 0.56
+      linksStart = 0.56,
+      menuEase = 'back.inOut'
 
     tl.to('#logo-path', { duration: duration, fill: '#00264F' }, 0)
       .to('#logo-circle', { duration: duration, fill: '#231F20' }, 0)
@@ -14,7 +15,7 @@ export default function HamburgerMenu() {
         {
           duration: duration,
           y: 6,
-          ease: 'back.inOut',
+          ease: menuEase,
           transformOrigin: '50% 50%',
           stroke: 'rgb(239, 68, 68)',
           strokeWidth: 3,
@@ -28,7 +29,7 @@ export default function HamburgerMenu() {
         {
           duration: duration,
           y: -6,
-          ease: 'back.inOut',
+          ease: menuEase,
           transformOrigin: '50% 50%',
           stroke: 'rgb(239, 68, 68)',
           strokeWidth: 3,

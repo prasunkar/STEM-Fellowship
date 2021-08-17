@@ -1,11 +1,16 @@
-const linkResolver = (doc) => {
-  // URL for a category type
-  if (doc.type === 'newsletter') {
-    return `/newsletters/${doc.uid}`
-  }
+exports.linkResolver = (doc) => {
+  switch (doc.type) {
+    case 'newsletter': {
+      return `/newsletters/${doc.uid}`
+    }
 
-  if (doc.type === 'team_member') {
-    return `/team/${doc.uid}`
+    case 'team_member': {
+      return `/team/${doc.uid}`
+    }
+
+    default: {
+      return '/'
+    }
   }
 
   // URL for an archive?
@@ -21,5 +26,3 @@ const linkResolver = (doc) => {
   // Backup for all other types
   return '/'
 }
-
-module.exports = linkResolver

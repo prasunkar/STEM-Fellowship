@@ -7,6 +7,20 @@
         "placeholder" : "Unique ID"
       }
     },
+    "volume" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Volume",
+        "placeholder" : "Volume Number"
+      }
+    },
+    "issue" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "Issue",
+        "placeholder" : "Issue Number"
+      }
+    },
     "hero_image" : {
       "type" : "Image",
       "config" : {

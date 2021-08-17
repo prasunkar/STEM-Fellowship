@@ -1,10 +1,11 @@
-const linkResolver = require('./src/utils/linkResolver')
-
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: 'STEM Fellowship',
     titleTemplate: '%s • STEM Fellowship',
@@ -15,6 +16,7 @@ module.exports = {
     lang: 'en',
     twitterUsername: '@STEM_Fellowship',
     instaUsername: '@stemfellowbloor',
+    instaUrl: 'https://instagram.com/stemfellowbloor',
     emailAddress: 'jacqueline.chen@stemfellowship.org',
     navUrls: [
       {
@@ -25,7 +27,7 @@ module.exports = {
       {
         name: 'Our Team',
         class: 'our-team',
-        to: '/ourteam',
+        to: '/team',
       },
       {
         name: 'Events',
@@ -58,46 +60,23 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
-        accessToken: process.env.GATSBY_PRISMIC_TOKEN,
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         lang: '*',
-        linkResolver: () => (doc) => linkResolver(doc),
+        linkResolver: require('./src/utils/linkResolver').linkResolver,
         schemas: {
-          newsletter: require('./schemas/newsletter.json'),
-          team_member: require('./schemas/team_member.json'),
+          newsletter: require('./custom_types/newsletter.json'),
+          team_member: require('./custom_types/team_member.json'),
         },
-        // prismicToolbar: true,
       },
     },
     {
       resolve: 'gatsby-plugin-prismic-previews',
       options: {
-        // The name of your Prismic repository. This is required.
-        // Example: 'your-repository-name' if your prismic.io address
-        // is 'your-repository-name.prismic.io'.
-        //
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
-
-        // An API access token to your Prismic repository. This is optional.
-        // You can generate an access token in the "API & Security" section of
-        // your repository settings. Setting a "Callback URL" is not necessary.
-        // The token will be listed under "Permanent access tokens".
-        //
-        // If you choose to keep your access token private, do not provide this
-        // plugin option. Editors will be prompted to enter an access token
-        // during a preview session instead, if required.
-        //
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.GATSBY_PRISMIC_TOKEN,
-
-        // Determines the type of Prismic Toolbar that is added to your site.
-        // This defaults to "new". See the "Prismic Toolbar" section of the
-        // plugin documentation for more details.
-        //
-        // Note: The toolbar is required for previews to function and cannot be
-        // disabled.
-        toolbar: 'new',
+        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        lang: '*',
       },
     },
     {
