@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import Layout from '../../components/Layout'
 
 export default function NewslettersPage() {
   const data = useStaticQuery(graphql`
@@ -24,7 +23,7 @@ export default function NewslettersPage() {
   const documents = data.allPrismicNewsletter.nodes
 
   return (
-    <Layout>
+    <div>
       <h1>Newsletters</h1>
       {documents.map((item, index) => {
         return (
@@ -33,6 +32,6 @@ export default function NewslettersPage() {
           </Link>
         )
       })}
-    </Layout>
+    </div>
   )
 }

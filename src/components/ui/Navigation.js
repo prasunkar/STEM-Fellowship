@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import TransitionLink from 'gatsby-plugin-transition-link'
 import { gsap } from 'gsap'
 
 import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram'
@@ -19,6 +20,7 @@ export default function Navigation({ overlay, children }) {
           navUrls {
             class
             name
+            partiallyActive
             to
           }
         }
@@ -32,14 +34,16 @@ export default function Navigation({ overlay, children }) {
         <Logo className="logo" />
         <div className="links">
           {navUrls.map((link, index) => (
-            <Link
+            <TransitionLink
               key={index}
               className={link.class}
               activeClassName="active"
+              partiallyActive={navUrls.partiallyActive}
+              fade
               to={link.to}
             >
               {link.name}
-            </Link>
+            </TransitionLink>
           ))}
         </div>
         <div className="socials">
@@ -55,14 +59,16 @@ export default function Navigation({ overlay, children }) {
       </div>
       <div className="overlay" id="overlay">
         {navUrls.map((link, index) => (
-          <Link
+          <TransitionLink
             key={index}
             className={`link ${link.class}`}
             activeClassName="active"
+            partiallyActive={navUrls.partiallyActive}
+            fade
             to={link.to}
           >
             {link.name}
-          </Link>
+          </TransitionLink>
         ))}
       </div>
     </nav>

@@ -1,68 +1,56 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "Unique ID",
-        "placeholder" : "Unique ID"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Unique ID",
+        "placeholder": "Unique ID"
       }
     },
-    "profile_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "Profile Image"
+    "profile_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Profile Image"
       }
     },
-    "full_name" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Full Name",
-        "placeholder" : "Team Member's Full Name"
+    "full_name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Full Name",
+        "placeholder": "Team Member's Full Name"
       }
     },
-    "position" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Position",
-        "placeholder" : "Team Position"
+    "position": {
+      "type": "Text",
+      "config": {
+        "label": "Position",
+        "placeholder": "Team Position"
       }
     },
-    "bio" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Bio",
-        "placeholder" : "Short Bio"
+    "bio": {
+      "type": "Text",
+      "config": {
+        "label": "Bio",
+        "placeholder": "Short Bio"
       }
     },
-    "social_links" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "social_link" : {
-            "type" : "Link",
-            "config" : {
-              "allowTargetBlank" : true,
-              "label" : "Social Link",
-              "placeholder" : "Social Link",
-              "select" : null
+    "social_links": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link": {
+            "type": "Link",
+            "config": {
+              "allowTargetBlank": true,
+              "label": "Link",
+              "placeholder": "URL to Social"
             }
           }
         },
-        "label" : "Social Links"
-      }
-    }
-  },
-  "Team Member's Content" : {
-    "published_newsletters" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "document",
-        "customtypes" : [ "newsletter" ],
-        "label" : "Published Newsletters",
-        "placeholder" : "Published Newsletters"
+        "label": "Social Links"
       }
     }
   }

@@ -1,81 +1,185 @@
-.page-contact {
-  div#body {
-    h1 {
-      @apply font-extrabold tracking-tighter text-2xl text-center my-4;
-    }
+div.page-contact {
+  h1 {
+    @apply font-extrabold tracking-tighter text-2xl text-center my-4;
 
-    p {
-      @apply w-5/6 text-xs mx-auto mb-8 text-center text-gray-600;
-    }
+    @screen sm { @apply text-4xl my-6; }
+    @screen md { @apply text-5xl my-8; }
+    @screen lg { @apply text-6xl my-10; }
+    @screen xl { @apply my-12; }
+    @screen 2xl { @apply mt-20 mb-8; }
+  }
 
-    div.contact-methods {
-      @apply flex flex-col gap-y-4;
+  p {
+    @apply w-5/6 text-xs mx-auto mb-8 text-center text-gray-600;
 
-      div {
-        @apply rounded-md pt-2 pb-3 px-3;
+    @screen sm { @apply text-sm; }
+    @screen md { @apply text-base mb-12 ;}
+    // @screen lg { @apply text-lg; }
+    @screen 2xl { @apply mb-16; }
+  }
 
-        h2 {
-          @apply tracking-tighter text-base font-semibold mb-2;
-        }
+  div.contact-methods {
+    @apply flex flex-col gap-y-4;
+
+    @screen sm { @apply gap-y-5; }
+    @screen md { @apply gap-y-6; }
+    @screen lg { @apply gap-y-0 flex-row; }
+
+    div {
+      @apply rounded-md pt-2 pb-3 px-3;
+
+      @screen sm { @apply pt-3 pb-4 px-4; }
+      @screen md { @apply rounded-lg pt-4 pb-5 px-5; }
+      @screen lg { @apply rounded-none pt-5 pb-6 px-6 flex-1; }
+      @screen xl { @apply pt-6 pb-7 px-7; }
+      @screen 2xl { @apply pt-7 pb-8 px-8; }
+
+      h2 {
+        @apply tracking-tighter text-base font-semibold mb-2;
+        
+        @screen sm { @apply text-lg; }
+        @screen md { @apply text-xl; }
+        @screen lg { @apply text-2xl; }
+        @screen xl { @apply font-bold text-4xl mb-6; }
+        @screen 2xl { @apply mb-8; }
       }
 
-      div.socials {
-        background-color: #00264F;
-
-        h2 { @apply text-white }
-
-        div.links {
-          @apply flex flex-col p-0;
-
-          button { // Instagram
-            @apply rounded-md px-3 py-1;
-            background-color: #fcc0d4;
-
-            a {
-              @apply flex flex-row items-center justify-center;
-
-              svg { @apply w-7 h-7 mr-1; }
-
-              p { @apply text-white font-semibold text-sm tracking-tighter m-0 w-auto leading-none align-middle; }
-            }
-          }
-
-          .instagram {
-            a {
-              svg, p {
-                color: #E1306C;
-              }
-            }
-          }
-        }
+      button { 
+        @apply 
+          transition-all
+          duration-150
+          outline-none
+        
+          focus:ring-4
+        ;
       }
+    }
 
-      div.get-in-touch {
-        background-color: #f9f9f9;
+    div.socials {
+      background-color: #00264F;
 
-        form {
-          input, textarea {
-            @apply bg-transparent outline-none w-full placeholder-gray-300 font-bold tracking-tighter;
-          }
+      h2 { @apply text-white text-right; }
 
-          input.name-field {
-            @apply text-2xl;
-          }
+      div.links {
+        @apply flex flex-col p-0;
 
-          input.email-field {
-            @apply text-base font-semibold text-red-500 mb-4;
-          }
+        button {
+          @apply rounded-md px-3 py-2;
 
-          textarea.body-field {
-            @apply text-sm text-gray-700 font-semibold mb-5 resize-none;
-          }
+          @screen lg { @apply rounded-full w-max px-16 mx-auto; }
+          
+          a {
+            @apply flex flex-row items-center justify-center;
 
-          button {
-            @apply py-1 px-6 ml-auto rounded-full font-bold text-blue-600 bg-blue-200 text-sm tracking-tighter transition-colors duration-150 float-right;
+            svg {
+              @apply w-7 h-7 mr-2;
+              
+              @screen sm { @apply w-8 h-8; }
+              @screen md { @apply w-9 h-9; }
+            }
+
+            p {
+              @apply text-white font-semibold text-base tracking-tighter m-0 w-auto leading-none align-middle;
             
-            &:hover, &:focus { @apply text-white bg-blue-600; }
-            &:disabled { @apply text-gray-400 bg-gray-200 cursor-not-allowed; }
+              @screen sm { @apply text-lg; }
+              @screen md { @apply text-xl; }
+            }
           }
+        }
+
+        .instagram {
+          @apply transition-colors duration-200;
+          background-color: #fcc0d4;
+
+          &:hover, &:focus {
+            @apply ring-opacity-50;
+            background-color: #E1306C;
+            --tw-ring-color: rgba(225, 48, 108, var(--tw-ring-opacity));
+
+            a {
+              svg, p { @apply text-white; }
+            }
+          }
+
+          a {
+            svg, p {
+              @apply transition-colors duration-200;
+              color: #E1306C;
+            }
+          }
+        }
+      }
+    }
+
+    div.get-in-touch {
+      background-color: #f9f9f9;
+
+      form {
+        input, textarea { @apply bg-transparent outline-none w-full placeholder-gray-300 font-bold tracking-tighter caret-gray-600; }
+
+        input.name-field {
+          @apply text-2xl;
+          
+          @screen sm { @apply text-4xl; }
+          @screen md { @apply text-5xl; }
+          @screen lg { @apply text-3xl; }
+        }
+
+        input.email-field {
+          @apply 
+            text-base
+            font-semibold
+            mb-4
+            transition-colors
+            duration-500
+            ease-out
+          
+            invalid:text-red-500
+            valid:text-green-600
+          ;
+
+          @screen sm { @apply text-lg; }
+          @screen md { @apply text-2xl; }
+          @screen lg { @apply text-lg; }
+        }
+
+        textarea.body-field {
+          @apply text-sm text-gray-700 font-semibold mb-5 resize-none overflow-y-visible;
+
+          @screen sm { @apply text-base; }
+          @screen md { @apply text-lg; }
+          @screen lg { @apply text-base; }
+        }
+
+        button {
+          @apply
+            py-1
+            px-6
+            ml-auto
+            rounded-full
+            font-bold 
+            text-blue-600 
+            bg-blue-200 
+            text-base 
+            tracking-tighter 
+            float-right
+
+            hover:text-white
+            hover:bg-blue-600
+
+            focus:text-white
+            focus:bg-blue-600
+            focus:ring-blue-400/50
+
+            disabled:text-gray-400
+            disabled:bg-gray-200
+            disabled:cursor-not-allowed
+          ;
+
+          @screen sm { @apply text-lg px-8; }
+          @screen md { @apply text-2xl py-2 px-9; }
+          @screen lg { @apply px-12; }
+          @screen xl { @apply text-lg py-1 px-8 float-none; }
         }
       }
     }

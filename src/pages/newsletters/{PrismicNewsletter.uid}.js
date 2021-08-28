@@ -3,18 +3,18 @@ import { graphql } from 'gatsby'
 import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 import { linkResolver } from '../../utils/linkResolver'
 
-import Layout from '../../components/Layout'
+// import Layout from '../../components/Layout'
 // import SliceZone from '../components/SliceZone'
 
 const NewsletterTemplate = ({ data }) => {
   const document = data.prismicNewsletter.data
 
   return (
-    <Layout>
+    <>
       <h1>
         {document.title.text}, Volume {document.volume} & Issue {document.issue}
       </h1>
-    </Layout>
+    </>
   )
 }
 

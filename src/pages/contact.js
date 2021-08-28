@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { init, sendForm } from 'emailjs-com'
 
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram'
 
@@ -51,7 +50,8 @@ const ContactPage = () => {
   }
 
   return (
-    <Layout page="page-contact">
+    // <Layout page="page-contact">
+    <div className="page-contact">
       <SEO title="Contact Us" />
       <h1>Contact Us</h1>
       <p>
@@ -129,7 +129,8 @@ const ContactPage = () => {
           </form>
         </div>
       </div>
-    </Layout>
+    </div>
+    // </Layout>
   )
 }
 
