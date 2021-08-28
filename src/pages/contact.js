@@ -33,7 +33,7 @@ const ContactPage = () => {
     else setFormDisabled(true)
 
     sendForm(
-      'service_josfdf6',
+      'service_4u10mxw',
       'template_ydsssm4',
       event.target,
       'user_G8EhJE3pPtoQGHcMhm9Ow'
