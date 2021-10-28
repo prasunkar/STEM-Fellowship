@@ -10,11 +10,9 @@ const NewsletterTemplate = ({ data }) => {
   const document = data.prismicNewsletter.data
 
   return (
-    <>
-      <h1>
-        {document.title.text}, Volume {document.volume} & Issue {document.issue}
-      </h1>
-    </>
+    <h1>
+      {document.title.text}, Volume {document.volume} & Issue {document.issue}
+    </h1>
   )
 }
 

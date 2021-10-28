@@ -26,8 +26,8 @@ module.exports = {
         partiallyActive: false,
       },
       {
-        name: 'Our Team',
-        class: 'our-team',
+        name: 'Team',
+        class: 'team',
         to: '/team/',
         partiallyActive: true,
       },
@@ -38,14 +38,20 @@ module.exports = {
         partiallyActive: true,
       },
       {
+        name: 'Initiatives',
+        class: 'initiatives',
+        to: '/initiatives/',
+        partiallyActive: true,
+      },
+      {
         name: 'Newsletters',
         class: 'newsletters',
         to: '/newsletters/',
         partiallyActive: true,
       },
       {
-        name: 'Contact Us',
-        class: 'contact-us',
+        name: 'Contact',
+        class: 'contact',
         to: '/contact/',
         partiallyActive: false,
       },
@@ -70,10 +76,6 @@ module.exports = {
         customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
         lang: '*',
         linkResolver: require('./src/utils/linkResolver').linkResolver,
-        schemas: {
-          newsletter: require('./custom_types/newsletter.json'),
-          team_member: require('./custom_types/team_member.json'),
-        },
       },
     },
     {
@@ -82,14 +84,6 @@ module.exports = {
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         lang: '*',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-gtag',
-      options: {
-        trackingIds: [
-          'UA-177000406-1', // Google Analytics / GA
-        ],
       },
     },
     'gatsby-plugin-image',

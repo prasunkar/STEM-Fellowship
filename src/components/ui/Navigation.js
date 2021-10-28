@@ -31,7 +31,9 @@ export default function Navigation({ overlay, children }) {
   return (
     <nav className={overlay ? 'navigation overlay' : 'navigation'}>
       <div>
-        <Logo className="logo" />
+        <TransitionLink to="/">
+          <Logo className="logo" />
+        </TransitionLink>
         <div className="links">
           {navUrls.map((link, index) => (
             <TransitionLink
@@ -39,7 +41,6 @@ export default function Navigation({ overlay, children }) {
               className={link.class}
               activeClassName="active"
               partiallyActive={navUrls.partiallyActive}
-              fade
               to={link.to}
             >
               {link.name}
@@ -64,7 +65,6 @@ export default function Navigation({ overlay, children }) {
             className={`link ${link.class}`}
             activeClassName="active"
             partiallyActive={navUrls.partiallyActive}
-            fade
             to={link.to}
           >
             {link.name}

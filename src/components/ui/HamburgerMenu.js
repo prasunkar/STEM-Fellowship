@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { gsap } from 'gsap'
 
+// TODO: Find a way to control the hamburger menu from outside this component
+//       so it can be controlled universally.
 export default function HamburgerMenu() {
   useEffect(() => {
     const tl = gsap.timeline({ paused: true }),

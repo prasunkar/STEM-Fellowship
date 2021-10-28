@@ -4,10 +4,8 @@ nav.navigation {
   div.overlay {
     @apply fixed hidden flex-col justify-center items-center w-full h-0 z-40 top-0 left-0 bg-white;
 
-    * {
-      @apply w-5/6 font-extrabold text-5xl text-transparent tracking-tighter my-2;
-
-      text-stroke: .032em #888888;
+    .link {
+      @apply w-5/6 font-extrabold text-5xl text-transparent tracking-tighter my-2 select-none;
       -webkit-text-stroke: .032em #888888;
 
       @screen sm { @apply text-7xl; }
@@ -15,8 +13,6 @@ nav.navigation {
 
     .active {
       @apply text-blue-800;
-
-      text-stroke: 0;
       -webkit-text-stroke: 0;
     }
   }
@@ -32,9 +28,7 @@ nav.navigation {
       items-center
     ;
 
-    > * {
-      @apply z-50;
-    }
+    > * { @apply z-50; }
 
     .logo { @apply h-auto w-8; }
 
@@ -44,8 +38,8 @@ nav.navigation {
       @screen md { @apply flex flex-row; }
       * {
         @apply 
-          mx-2 
-          py-1 
+          mx-2
+          py-1
           px-4 
           rounded-full 
           transition-colors
@@ -89,28 +83,22 @@ nav.navigation {
     }
 
     .socials { 
-      @apply
-        hidden
-        m-0
-        w-auto;
+      @apply hidden m-0 w-auto;
 
       @screen lg { @apply flex flex-row; }
 
       a {
-        @apply
-          rounded-full
-          p-1
-          transition-colors
+        @apply rounded-full p-1 transition-colors
 
           hover:bg-blue-200
           hover:text-blue-800
+
+          focus:bg-blue-200
+          focus:text-blue-800
         ;
 
         svg {
-          @apply 
-            w-8
-            h-8
-          ;
+          @apply w-8 h-8;
 
           @screen xl { @apply w-11 h-11; }
         }
@@ -124,9 +112,7 @@ nav.navigation {
         text-base
         tracking-tighter
         cursor-pointer
-        m-0
-        w-auto
-        h-auto
+        m-0 w-auto h-auto
         inline
       ;
 
@@ -141,12 +127,10 @@ nav.navigation {
   }
 }
 
-nav.overlay {
+nav.overlay { // TODO: This overlay pertains to when it's placed on top of media. Do proper implementation when working on the individual newsletter pages.
   @apply bg-gray-300;
 
   div {
-    * {
-      @apply fill-current stroke-current text-white;
-    }
+    * { @apply fill-current stroke-current text-transparent; }
   }
 }

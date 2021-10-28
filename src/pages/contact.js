@@ -5,10 +5,10 @@ import { init, sendForm } from 'emailjs-com'
 import SEO from '../components/SEO'
 import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram'
 
-const ContactPage = () => {
+export default function ContactPage() {
   const {
     site: {
-      siteMetadata: { instaUrl, emailAddress },
+      siteMetadata: { instaUrl, emailAddress, description },
     },
   } = useStaticQuery(graphql`
     {
@@ -16,6 +16,7 @@ const ContactPage = () => {
         siteMetadata {
           instaUrl
           emailAddress
+          description
         }
       }
     }
@@ -51,8 +52,8 @@ const ContactPage = () => {
 
   return (
     // <Layout page="page-contact">
-    <div className="page-contact">
-      <SEO title="Contact Us" />
+    <main className="page-contact">
+      <SEO title="Contact Us" description={description} />
       <h1>Contact Us</h1>
       <p>
         We have no one but our community to thank for our incredible success. We
@@ -129,9 +130,7 @@ const ContactPage = () => {
           </form>
         </div>
       </div>
-    </div>
+    </main>
     // </Layout>
   )
 }
-
-export default ContactPage

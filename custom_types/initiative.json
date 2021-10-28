@@ -1,0 +1,19 @@
+{
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Unique ID",
+        "placeholder" : "Unique ID"
+      }
+    },
+    "title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Title",
+        "placeholder" : "Initiative Title"
+      }
+    }
+  }
+}
