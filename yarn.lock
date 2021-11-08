@@ -1765,10 +1765,10 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@prismicio/client@^6.0.0-beta.0":
-  version "6.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-6.0.0-beta.1.tgz#ba86f8d71a978491eac69c4b16c31bf6634bb435"
-  integrity sha512-hxVfYHs8Vzrqs/Opg9tZ7njhnYd+EIEfwADievk6Dd3yMsLrQupAQjRGnla1fjdVS/LprdbCCGud9spnbxsqew==
+"@prismicio/client@^6.0.0-beta.0", "@prismicio/client@^6.0.0-beta.2":
+  version "6.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-6.0.0-beta.2.tgz#4089b65aca48141b7d245d8c1cdcb15d3c3ebc46"
+  integrity sha512-VBBNwmsm1DisoIp5jKa2f+tIBVNLb1M3a4S/++63XhTsf4prATIGPREHdMFIdj70k9Jq51CqGiIyUUY+2OHZyQ==
   dependencies:
     "@prismicio/helpers" "^2.0.0-beta.0"
     "@prismicio/types" "^0.1.15"
@@ -5985,13 +5985,13 @@ gatsby-plugin-page-creator@^4.0.0:
     globby "^11.0.4"
     lodash "^4.17.21"
 
-gatsby-plugin-prismic-previews@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-prismic-previews/-/gatsby-plugin-prismic-previews-5.0.0.tgz#35dd9e520ba9582eb88a435d38765fa659f5c1bc"
-  integrity sha512-rASu0PD+/UgVknF0cpnyRjpw5kUQkuQm2hw/VgysOyNCgEPs6owxKNbScnlJpPSqRRmChgq1KK2b9MEUiemHVg==
+gatsby-plugin-prismic-previews@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-prismic-previews/-/gatsby-plugin-prismic-previews-5.0.3.tgz#bfee945bdcde97aa4125bd3895031006d6e2a968"
+  integrity sha512-2dD2ZILja0uMdFrE9Z+FpB99oGqEg7p1WHOY+iNsJLgxN3hDj6CUR4w6uR3V0mCPR+55F8fEpPhrA6s+mn9Jsg==
   dependencies:
     "@imgix/gatsby" "^1.6.13"
-    "@prismicio/client" "^6.0.0-beta.0"
+    "@prismicio/client" "^6.0.0-beta.2"
     "@prismicio/helpers" "^2.0.0-beta.0"
     "@prismicio/types" "^0.1.13"
     "@reach/dialog" "^0.16.0"
