@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
-    "@fontsource/inter": "^4.5.0",
+    "@fontsource/inter": "^4.5.1",
     "@react-icons/all-files": "^4.1.0",
     "apollo-link-prismic": "^1.0.9",
     "autoprefixer": "^10.4.2",
