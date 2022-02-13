@@ -1,3 +1,5 @@
+// TODO: Redesign contact page
+
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { init, sendForm } from 'emailjs-com'
@@ -8,14 +10,13 @@ import { AiOutlineInstagram } from '@react-icons/all-files/ai/AiOutlineInstagram
 export default function ContactPage() {
   const {
     site: {
-      siteMetadata: { instaUrl, emailAddress, description },
+      siteMetadata: { instaUrl, description },
     },
   } = useStaticQuery(graphql`
     {
       site {
         siteMetadata {
           instaUrl
-          emailAddress
           description
         }
       }

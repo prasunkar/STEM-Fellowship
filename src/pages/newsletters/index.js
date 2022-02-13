@@ -1,9 +1,24 @@
 import React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 
+import SEO from '../../components/SEO'
+
 export default function NewslettersPage() {
-  const data = useStaticQuery(graphql`
-    query AllNewsletters {
+  const {
+    site: {
+      siteMetadata: { description }
+    },
+    allPrismicNewsletter: {
+      nodes: documents
+    }
+  } = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          description
+        }
+      }
+
       allPrismicNewsletter {
         nodes {
           id
@@ -20,10 +35,9 @@ export default function NewslettersPage() {
     }
   `)
 
-  const documents = data.allPrismicNewsletter.nodes
-
   return (
-    <div>
+    <main className='page-newsletters'>
+      <SEO title='Newsletters' description={description} />
       <h1>Newsletters</h1>
       {documents.map((item, index) => {
         return (
@@ -32,6 +46,6 @@ export default function NewslettersPage() {
           </Link>
         )
       })}
-    </div>
+    </main>
   )
 }
