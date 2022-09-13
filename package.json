@@ -29,7 +29,7 @@
     "autoprefixer": "^10.4.2",
     "emailjs-com": "^3.2.0",
     "gatsby": "^4.5.4",
-    "gatsby-plugin-image": "^2.5.1",
+    "gatsby-plugin-image": "^2.23.0",
     "gatsby-plugin-prismic-previews": "^5.2.5",
     "gatsby-plugin-sass": "^5.5.0",
     "gatsby-plugin-sharp": "^4.5.1",
